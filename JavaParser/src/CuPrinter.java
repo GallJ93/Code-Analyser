@@ -17,7 +17,7 @@ public class CuPrinter {
             in.close();
         }
 
-        // prints the resulting compilation unit to default system output
+        // prints the resulting AAAAAAAAAAAAAtion unit to default system output
         System.out.println(cu.toString());
     }
 }

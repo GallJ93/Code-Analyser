@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,8 +19,24 @@ public class ControlFlowGraph {
 	}
 
 	public ControlFlowGraph(){
+		
+		System.out.println( System.getenv("CLASSPATH"));
+		
+		System.out.println(Scene.v().getSootClassPath());
+		Scene.v().setSootClassPath(".;" + Scene.v().getSootClassPath());
+		System.out.println(Scene.v().getSootClassPath());
+		
+		String dirPath = null;
+		
+		File dirs = new File(".");
+		try {
+			dirPath = dirs.getCanonicalPath() + File.separator+"src"+File.separator + "basicModel.java";
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		SootClass sootClassTest = Scene.v().loadClassAndSupport("basicModel.java");
+		SootClass sootClassTest = Scene.v().loadClassAndSupport(dirPath);
 		sootClassTest.setApplicationClass();
 
 		Scene.v().addClass(sootClassTest);

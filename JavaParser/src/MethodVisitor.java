@@ -1,8 +1,15 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import japa.parser.ast.body.*;
 import japa.parser.ast.visitor.*;
 
 
 public class MethodVisitor extends VoidVisitorAdapter{
+	
+	List<String> methodNames = new ArrayList<String>(), parameterNames = new ArrayList<String>();
+	HashMap<String, List<String>> methodParameters = new HashMap<String, List<String>>();
 	
 	public MethodVisitor(){
 		
@@ -10,22 +17,33 @@ public class MethodVisitor extends VoidVisitorAdapter{
 	
 	public void visit(MethodDeclaration method, Object object){
 		
-		String parameters;
+		List<Parameter> parameters;
 		
-		System.out.print(method.getType() + " " + method.getName() + "(");
+		methodNames.add(method.getName());
 		
 		if(method.getParameters() != null){
 			
-			parameters = method.getParameters().toString();
+			parameters = method.getParameters();
 			
-			System.out.println(parameters.substring(1, parameters.length()-1) + ")");
-		}
-		else{
-			System.out.println(")");
+			for(Parameter parameter : parameters){
+				parameterNames.add(parameter.toString());
+			}
+			
+			methodParameters.put(method.getName(), parameterNames);
+			
 		}
 		
-		System.out.println();
+	}
+	
+	public List<String> returnMethodList(){
 		
+		return methodNames;
+		
+	}
+	
+	public HashMap<String, List<String>> returnMethodParameters(){
+		
+		return methodParameters;
 	}
 	
 }

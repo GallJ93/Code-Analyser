@@ -13,6 +13,7 @@ public class JavaParserUML{
 
 	MethodVisitor methods;
 	VariableVisitor variables;
+	ClassVisitor classOrInterface;
 
 	public static void main(String[] args) throws ParseException, IOException{
 		JavaParserUML blarg = new JavaParserUML();
@@ -36,9 +37,12 @@ public class JavaParserUML{
 					
 					methods = new MethodVisitor();
 					variables = new VariableVisitor();
+					classOrInterface = new ClassVisitor();
+				
 					
 					System.out.println();
 					System.out.println();
+					classOrInterface.visit(parsedInput, null);
 					System.out.println(file.getName().substring(0, file.getName().length()-5));
 					variables.visit(parsedInput, null);
 					System.out.println();

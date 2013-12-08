@@ -20,7 +20,7 @@ public class JavaParserUML{
 
 	public JavaParserUML() throws ParseException, IOException {
 		
-		File file = new File("C:\\Users\\James\\Desktop\\University\\1st Year University\\CS 105 - Programming Foundations\\Eclipse\\CS308 - Gizmoball Prototypes\\src");
+		File file = new File("//Users/andrewconway/Documents/workspace/CS309 Clock/src/");
 		
 		examineDirectory(file);
 
@@ -42,7 +42,7 @@ public class JavaParserUML{
 					System.out.println(file.getName().substring(0, file.getName().length()-5));
 					variables.visit(parsedInput, null);
 					System.out.println();
-					methods.visit(parsedInput, null);
+					//methods.visit(parsedInput, null);
 				}
 			}
 		}

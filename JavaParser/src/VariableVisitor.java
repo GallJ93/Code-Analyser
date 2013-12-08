@@ -11,12 +11,13 @@ public class VariableVisitor extends VoidVisitorAdapter{
 		
 	}
 	
-	public void visit(VariableDeclarationExpr variables, Object object){
-
-		List<VariableDeclarator> variableList = variables.getVars();
+	public void visit(FieldDeclaration fields, Object object){
 		
+
+		List<VariableDeclarator> variableList = fields.getVariables();
+		System.out.println("Type " + fields.getType());
 		for(VariableDeclarator variable : variableList){
-			System.out.println(variable.getId().getName() + " " + variable.getId().getName());
+			System.out.println("Name " + variable.getId().getName());
 		}
 		
 	}

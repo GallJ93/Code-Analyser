@@ -14,7 +14,28 @@ public class ClassVisitor extends VoidVisitorAdapter{
 		
 		
 		List<ClassOrInterfaceType> extendsList = classOrInterface.getExtends();
-		List<ClassOrInterfaceType> implementsList = classOrInterface.getExtends();
+		List<ClassOrInterfaceType> implementsList = classOrInterface.getImplements();
+		
+		if(extendsList !=null && implementsList!=null){
+			for(ClassOrInterfaceType extendsName : extendsList){
+				System.out.println("Extends " + extendsName.getName());
+			}
+			for(ClassOrInterfaceType implementsName : implementsList){
+				System.out.println("Implements " + implementsName.getName());
+			}
+		}
+		else if(extendsList!=null){
+			for(ClassOrInterfaceType extendsName : extendsList){
+				System.out.println("Extends " + extendsName.getName());
+			}
+		}
+		else if(implementsList!=null){
+			for(ClassOrInterfaceType implementsName : implementsList){
+				System.out.println("Implements " + implementsName.getName());
+			}
+		}
+		else{
+		}
 		  
 		
 		if(classOrInterface.isInterface() == true){
@@ -24,12 +45,12 @@ public class ClassVisitor extends VoidVisitorAdapter{
 			System.out.println("Class");
 		}
 		
-		for(ClassOrInterfaceType extendsName : extendsList){
+	/*	for(ClassOrInterfaceType extendsName : extendsList){
 			System.out.println("Extends " + extendsName.getName());
 		}
 		
 		for(ClassOrInterfaceType implementsName : implementsList){
 			System.out.println("Implements " + implementsName.getName());
-		}
+		}*/
 	}
 }

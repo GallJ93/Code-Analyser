@@ -27,11 +27,11 @@ public class JavaParserUML {
 	HashMap<String, String> connectionsBetweenClasses = new HashMap<String, String>();
 
 	public static void main(String[] args) throws ParseException, IOException {
-		JavaParserUML blarg = new JavaParserUML();
+		JavaParserUML blarg = new JavaParserUML(args[0]);
 		GraphDisplay asssss = new GraphDisplay();
 	}
 
-	public JavaParserUML() throws ParseException, IOException {
+	public JavaParserUML(String argument) throws ParseException, IOException {
 
 		/*
 		 * C:\\Users\\James\\Desktop\\University\\3rd Year
@@ -42,8 +42,7 @@ public class JavaParserUML {
 		// University\\Graphics\\Flight Simulator\\flight-sim\\CS309 Flight
 		// Simulator\\src
 
-		File file = new File(
-				"C:\\Users\\James\\Desktop\\University\\3rd Year University\\Sotirios\\Boston Metro\\src");
+		File file = new File(argument);
 
 		examineDirectory(file);
 		discoverRelationships(file);

@@ -28,7 +28,7 @@ public class JavaParserUML {
 
 	public static void main(String[] args) throws ParseException, IOException {
 		JavaParserUML blarg = new JavaParserUML(args[0]);
-		GraphDisplay asssss = new GraphDisplay();
+		Frame frame = new Frame();
 	}
 
 	public JavaParserUML(String argument) throws ParseException, IOException {

@@ -3,10 +3,8 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-import org.jgraph.JGraph;
 
-
-public class GraphDisplay {
+public class GraphDisplay{
 
 	public GraphDisplay(){
 		
@@ -17,13 +15,10 @@ public class GraphDisplay {
 		frame.setMinimumSize(new Dimension(720, 480));
 		frame.setSize(new Dimension(720, 480));
 		frame.setLocationRelativeTo(null);
+		
+		graphSetUp();
 
-		JGraph graph = new JGraph();
-		
-		graph.setEditable(false);
-		graph.setEnabled(false);
-		
-		JScrollPane scrollPane = new JScrollPane(graph);
+		JScrollPane scrollPane = new JScrollPane();
 		
 		frame.add(scrollPane);
 		
@@ -32,6 +27,8 @@ public class GraphDisplay {
 
 	}
 
-
+	private void graphSetUp() {
+		
+	}
 
 }

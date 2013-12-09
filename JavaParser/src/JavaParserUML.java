@@ -28,6 +28,7 @@ public class JavaParserUML {
 
 	public static void main(String[] args) throws ParseException, IOException {
 		JavaParserUML blarg = new JavaParserUML();
+		GraphDisplay asssss = new GraphDisplay();
 	}
 
 	public JavaParserUML() throws ParseException, IOException {
